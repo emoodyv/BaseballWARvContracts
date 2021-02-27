@@ -7,3 +7,4 @@ How does a well-established baseball player's WAR move in relation to completion
 We believe that most baseball player's WAR will be at its peak towards the end of their contract because it's so that players can maximize their value for their next potential contract.
 ## Communication Methods
 For this project we are using Discord as a means to centralize information shared and facilitate group video calls. 
+## Dashboard
