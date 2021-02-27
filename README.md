@@ -8,3 +8,5 @@ We believe that most baseball player's WAR will be at its peak towards the end o
 ## Communication Methods
 For this project we are using Discord as a means to centralize information shared and facilitate group video calls. 
 ## Dashboard
+- Interactive webpage
+- correlation matrices
