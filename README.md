@@ -67,7 +67,7 @@ We chose to only examine baseball seasons from  1995 to 2019. We chose 1995 as a
 
 For window of contract, we agreed upon a minimun of 3 years. 
 
-We also only wanted to include a player if they played at least 20% of season. 
+We also only wanted to include a player if they played at least 20% of season to avoid potentially skewed WAR_PSP values.  
 
 #### Columns List 
 
