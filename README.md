@@ -8,7 +8,7 @@ There are many different metrics to measure how good or valuable a baseball play
 
 WAR is an attempt by the sabermetric baseball community to summarize a player’s total contributions to their team in one statistic. You should always use more than one metric at a time when evaluating players, but WAR is all-inclusive and provides a useful reference point for comparing players. 
 
-WAR offers an estimate to answer the question, “If this player got injured and their team had to replace them with a freely available minor leaguer or a AAAA player from their bench, how much value would the team be losing?” 
+WAR offers an estimate to answer the question, “If this player got injured and their team had to replace them with a freely available minor leaguer or a [AAAA player](https://www.baseball-reference.com/bullpen/AAAA_player) from their bench, how much value would the team be losing?” 
 
 This value is expressed in a wins format, so we could say that Player X is worth +6.3 wins to their team while Player Y is only worth +3.5 wins, which means it is highly likely that Player X has been more valuable than Player Y.
 
@@ -30,7 +30,7 @@ We believe that most baseball player's WAR will be at its peak towards the end o
 ## Communication Methods
 
 For this project we are using Discord as a means to centralize information shared and facilitate group video calls. 
-Our group has agreed upon to meet during class times and at least one weekend day. 
+Our group has agreed upon to meet during class times and at least one weekend day for review. 
 
 ## Resources
 
@@ -51,7 +51,7 @@ Our group has agreed upon to meet during class times and at least one weekend da
 ### Programs used
 
 * PyCharm (Python 3.8.5)
-* 
+* Jupyter Notebook 
 
 
 ## Final Data Files 
