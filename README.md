@@ -30,7 +30,7 @@ We believe that most baseball player's WAR will be at its peak towards the end o
 ## Communication Methods
 
 For this project we are using Discord as a means to centralize information shared and facilitate group video calls. 
-Our group has agreed upon to meet outside of class times, Wednesdays and at least one weekend day. 
+Our group has agreed upon to meet during class times and at least one weekend day. 
 
 ## Resources
 
@@ -96,8 +96,10 @@ We also only wanted to include a player if they played at least 20% of season.
 * Team_Payroll.py - Adding a column for adjusted team payroll
 * Team_Wins.py - Adding column for team win percentage
 
-
-
 ## Machine Learning Model 
 
 * WAR_MLmodel.ipynb
+
+## Dashboard
+- Interactive webpage
+- correlation matrices
