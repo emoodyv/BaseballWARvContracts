@@ -50,7 +50,7 @@ Our group has agreed upon to meet outside of class times, Wednesdays and at leas
 
 ### Programs used
 
-* Python ver __
+* PyCharm (Python 3.8.5)
 * 
 
 
