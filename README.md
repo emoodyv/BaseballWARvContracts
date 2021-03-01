@@ -17,10 +17,11 @@ Now that we have a general understanding of WAR, that leads up to our project ob
 
 ## Objective: 
 
-How does an established baseball player's WAR move (increases/decreases/stay the same) in relation to completion of their multi-year contract? 
+How does an well-established ('well established' meaning a player has been rewarded a contract of at least 3 years in length) baseball player's WAR move (increases/decreases/stay the same) in relation to completion of their multi-year contract? 
 
 ## Why did we select this topic? 
 
+We want our fantasy baseball teams to perform better? 
 
 ## Hypothesis (question(s) we hope to answer with the data):
 
@@ -44,6 +45,8 @@ Our group has agreed upon to meet outside of class times, Wednesdays and at leas
 * https://community.fangraphs.com/on-war-its-linearity-and-efficient-free-agent-contracts/
 * batter.csv
 * pitcher.csv
+* http://www.stevetheump.com/Payrolls.htm
+* http://www.thebaseballcube.com/topics/payrolls/
 
 ### Programs used
 
@@ -59,19 +62,15 @@ Our group has agreed upon to meet outside of class times, Wednesdays and at leas
 
 ## Creating our Dataset
 
-The following in alphabetical order are our Python scripts used to clean our data and what their purpose was. 
+Below is a list of the data columns we came up with and the scripts used to mine it. We narrowed certain criteria of the data we collected as follows: 
 
-* Adjusted_WAR_Combining.py - Adjusting the WAR and combining team names
-* Cleaning.py - Cleaning the original dataset
-* Combining.py - Combing the original dataset into all_players.csv
-* Final_Formating.py - Final formatting of the data
-* Naming.py - Fixing Mojibake
-* Scraping_Contracts.py - Scraping contract data
-* Scraping_DL.py - Scraping and adding DL trip data
-* Team_Payroll.py - Adding a column for adjusted team payroll
-* Team_Wins.py - Adding column for team win percentage
+We chose to only examine baseball seasons from  1995 to 2019. We chose 1995 as a staring point as there was a baseball strike the previous year, and 2019 as our ending point because of the 2020 Covid-19 pandemic. Both those years if included we believe would have skewed our findings. 
 
-Are columns are as follows: 
+For window of contract, we agreed upon a minimun of 3 years. 
+
+We also only wanted to include a player if they played at least 20% of season. 
+
+#### Columns List 
 
 * Age
 * Year
@@ -84,6 +83,20 @@ Are columns are as follows:
 * Team_Win_Percentage
 * Team_Payroll
 * Percent_Contract_Complete
+
+#### Python scripts used for cleaning of data with descriptions, alphabatized 
+
+* Adjusted_WAR_Combining.py - Adjusting the WAR and combining team names
+* Cleaning.py - Cleaning the original dataset
+* Combining.py - Combing the original dataset into all_players.csv
+* Final_Formating.py - Final formatting of the data
+* Naming.py - Fixing Mojibake
+* Scraping_Contracts.py - Scraping contract data
+* Scraping_DL.py - Scraping and adding DL trip data
+* Team_Payroll.py - Adding a column for adjusted team payroll
+* Team_Wins.py - Adding column for team win percentage
+
+
 
 ## Machine Learning Model 
 
