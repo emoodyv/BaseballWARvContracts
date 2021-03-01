@@ -15,7 +15,7 @@ This value is expressed in a wins format, so we could say that Player X is worth
 Now that we have a general understanding of WAR, that leads up to our project objective and hypothesis. 
 
 
-## Objective: 
+## Objective
 
 How does an well-established ('well established' meaning a player has been rewarded a contract of at least 3 years in length) baseball player's WAR move (increases/decreases/stay the same) in relation to completion of their multi-year contract? 
 
@@ -23,7 +23,7 @@ How does an well-established ('well established' meaning a player has been rewar
 
 We want our fantasy baseball teams to perform better? 
 
-## Hypothesis (question(s) we hope to answer with the data):
+## Hypothesis (question(s) we hope to answer with the data)
 
 We believe that most baseball player's WAR will be at its peak towards the end of their contract because it's so that players can maximize their value for their next potential contract.
 
@@ -39,8 +39,6 @@ Our group has agreed upon to meet during class times and at least one weekend da
 * WAR definition - https://library.fangraphs.com/misc/war/ 
 * https://community.fangraphs.com/on-war-its-linearity-and-efficient-free-agent-contracts/
 * How WAR is calculated - https://www.instructables.com/Calculating-the-WAR-Statistic/#:~:text=The%20formula%20itself%20is%20not,are%20more%20difficult%20to%20calculate.
-* baseballdatabank-master.part1.rar
-* baseballdatabank-master.part2.rar
 * mlb-war-data-historical.csv 
 * https://community.fangraphs.com/on-war-its-linearity-and-efficient-free-agent-contracts/
 * batter.csv
