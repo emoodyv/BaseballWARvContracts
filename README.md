@@ -17,14 +17,14 @@ Now that we have a general understanding of WAR, that leads up to our project ob
 
 ## Objective: 
 
-How does an established baseball player's WAR move (increases/decreases/stays the same) in relation to completion of their multi-year contract? 
+How does an established baseball player's WAR move (increases/decreases/stay the same) in relation to completion of their multi-year contract? 
 
 ## Why did we select this topic? 
 
 
 ## Hypothesis (question(s) we hope to answer with the data):
 
-We believe that most baseball player's WAR will be at its peak towards the end of their contract because players will want to maximize their value for their next potential contract.
+We believe that most baseball player's WAR will be at its peak towards the end of their contract because it's so that players can maximize their value for their next potential contract.
 
 ## Communication Methods
 
@@ -45,10 +45,46 @@ Our group has agreed upon to meet outside of class times, Wednesdays and at leas
 * batter.csv
 * pitcher.csv
 
-###  Filtered Dataset
+### Programs used
 
-* Current dataset for our analysis: all_players.csv
+* Python ver __
+* 
+
+
+## Final Data Files 
+
+* Current dataset for our analysis: all_players.csv 
+* Factoring for inflation by year: Inflation_Constants.csv
+
 
 ## Creating our Dataset
 
-Def need a group effort here to recount what we added/subtracted and why. 
+The following in alphabetical order are our Python scripts used to clean our data and what their purpose was. 
+
+* Adjusted_WAR_Combining.py - Adjusting the WAR and combining team names
+* Cleaning.py - Cleaning the original dataset
+* Combining.py - Combing the original dataset into all_players.csv
+* Final_Formating.py - Final formatting of the data
+* Naming.py - Fixing Mojibake
+* Scraping_Contracts.py - Scraping contract data
+* Scraping_DL.py - Scraping and adding DL trip data
+* Team_Payroll.py - Adding a column for adjusted team payroll
+* Team_Wins.py - Adding column for team win percentage
+
+Are columns are as follows: 
+
+* Age
+* Year
+* Team
+* League (American League or National League) 
+* Player_Salary
+* Percent_Season_Played
+* WAR_PSP (Wins Above Replacement adjusted for Percentage of Season Played)
+* Num_DL_Movements (Number of times in a season player moved to Disabled List) 
+* Team_Win_Percentage
+* Team_Payroll
+* Percent_Contract_Complete
+
+## Machine Learning Model 
+
+* WAR_MLmodel.ipynb
