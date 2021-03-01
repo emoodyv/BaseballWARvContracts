@@ -100,5 +100,6 @@ We also only wanted to include a player if they played at least 20% of season to
 * WAR_MLmodel.ipynb
 
 ## Dashboard
-- Interactive webpage
-- correlation matrices
+- Interactive webpage - using the belly button challenge code as a base
+- correlation matrices - to display data for WAR in relation to % contract remaining
+- 
