@@ -21,7 +21,8 @@ How does an well-established ('well established' meaning a player has been rewar
 
 ## Why did we select this topic? 
 
-We want our fantasy baseball teams to perform better? 
+We want our fantasy baseball teams to perform better and that comes through identifying which set of players may be due for a good statistical year based on being within their walk year. That, and also it's fascinating to see how a player performs throughout a season and see how intrinsic value produced in the current year can have them produce at a higher level could lead to a better payday for many seasons to follow. 
+But yeah, bottom line - we want our fantasy teams to perform better.
 
 ## Hypothesis (question(s) we hope to answer with the data)
 
