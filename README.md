@@ -113,15 +113,20 @@ Ed says that we can embed specific worksheets into an index.html file, so that t
 
 I do like the idea of using Tableau’s worksheets because it’s easier than creating code from scratch in an index.html file, and all the interactive features would be included. 
 
-SLIDE 1 
+### SLIDE 1 
+![](https://github.com/Shap3shifter/BaseballWARvContracts/blob/josef-scaffolding/Images%20for%20Google%20Slides%20Scaffolding/1.png)
 What people visiting the site would see when first… visiting. I didn’t add any images yet or customize things. Note the clickable links. 
 
-SLIDE 2
+### SLIDE 2
+![](https://github.com/Shap3shifter/BaseballWARvContracts/blob/josef-scaffolding/Images%20for%20Google%20Slides%20Scaffolding/2.png)
 This site is designed so that  when you click on a link, it scrolls down to that section of the website (similar to a restaurant menu on door dash or something) 
 
-SLIDE 3
+### SLIDE 3
+![](https://github.com/Shap3shifter/BaseballWARvContracts/blob/josef-scaffolding/Images%20for%20Google%20Slides%20Scaffolding/3.png)
 This would be the first Tableau Worksheet that would be interactive the same way as if it were in a shared tableau link. 
 
+### SLide 4
+![](https://github.com/Shap3shifter/BaseballWARvContracts/blob/josef-scaffolding/Images%20for%20Google%20Slides%20Scaffolding/4.png)
 The rest of the slides is a scaffolding of the rest of the tableau worksheets displayed on website (each clickable to scroll to). 
 
 Obviously proper descriptions of what each worksheet represents, and how to interact with them should be included in each section. 
