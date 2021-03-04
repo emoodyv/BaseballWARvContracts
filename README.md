@@ -101,3 +101,31 @@ We also only wanted to include a player if they played at least 20% of season.
 ## Machine Learning Model 
 
 * WAR_MLmodel.ipynb
+
+# Week 2 - Scaffolding Phase 
+
+### Google Slides Dashboard layout v.1 
+https://docs.google.com/presentation/d/1sS-l4fdMVWR8aU56O_TnNt9hhm58viymPNDhlr7l34g/edit?usp=sharing
+
+Attached is the very very VERY rough draft of how the dashboard website could look like. I based this based on Jonathan’s index.html + style.css  files that he shared the other day as well as Ed’s Tableau storyboard. 
+
+Ed says that we can embed specific worksheets into an index.html file, so that they can be showcased separately, so that is the concept behind this rough design. We may decide to showcase the data graphs in a different way. 
+
+I do like the idea of using Tableau’s worksheets because it’s easier than creating code from scratch in an index.html file, and all the interactive features would be included. 
+
+SLIDE 1 
+What people visiting the site would see when first… visiting. I didn’t add any images yet or customize things. Note the clickable links. 
+
+SLIDE 2
+This site is designed so that  when you click on a link, it scrolls down to that section of the website (similar to a restaurant menu on door dash or something) 
+
+SLIDE 3
+This would be the first Tableau Worksheet that would be interactive the same way as if it were in a shared tableau link. 
+
+The rest of the slides is a scaffolding of the rest of the tableau worksheets displayed on website (each clickable to scroll to). 
+
+Obviously proper descriptions of what each worksheet represents, and how to interact with them should be included in each section. 
+
+Please give some feedback (things that may be missing/need to be included, themes, etc). Ed and I are down to take point for getting this all up and running. 
+
+Also, can I get some recommendations on how I should update this to my git branch?
