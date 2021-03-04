@@ -133,4 +133,3 @@ Obviously proper descriptions of what each worksheet represents, and how to inte
 
 Please give some feedback (things that may be missing/need to be included, themes, etc). Ed and I are down to take point for getting this all up and running. 
 
-Also, can I get some recommendations on how I should update this to my git branch?
