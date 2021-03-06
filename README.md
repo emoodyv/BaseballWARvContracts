@@ -99,8 +99,103 @@ We also only wanted to include a player if they played at least 20% of season to
 
 * WAR_MLmodel.ipynb
 
+# Week 2 - Scaffolding Phase 
+
+### Google Slides Dashboard layout v.1 
+https://docs.google.com/presentation/d/1sS-l4fdMVWR8aU56O_TnNt9hhm58viymPNDhlr7l34g/edit?usp=sharing
+
+Attached is the very very VERY rough draft of how the dashboard website could look like. I based this based on Jonathan’s index.html + style.css  files that he shared the other day as well as Ed’s Tableau storyboard. 
+
+Ed says that we can embed specific worksheets into an index.html file, so that they can be showcased separately, so that is the concept behind this rough design. We may decide to showcase the data graphs in a different way. 
+
+I do like the idea of using Tableau’s worksheets because it’s easier than creating code from scratch in an index.html file, and all the interactive features would be included. 
+
+### SLIDE 1 
+![](https://github.com/Shap3shifter/BaseballWARvContracts/blob/josef-scaffolding/Images%20for%20Google%20Slides%20Scaffolding/1.png)
+What people visiting the site would see when first… visiting. I didn’t add any images yet or customize things. Note the clickable links. 
+
+### SLIDE 2
+![](https://github.com/Shap3shifter/BaseballWARvContracts/blob/josef-scaffolding/Images%20for%20Google%20Slides%20Scaffolding/2.png)
+This site is designed so that  when you click on a link, it scrolls down to that section of the website (similar to a restaurant menu on door dash or something) 
+
+### SLIDE 3
+![](https://github.com/Shap3shifter/BaseballWARvContracts/blob/josef-scaffolding/Images%20for%20Google%20Slides%20Scaffolding/3.png)
+This would be the first Tableau Worksheet that would be interactive the same way as if it were in a shared tableau link. 
+
+### SLide 4
+![](https://github.com/Shap3shifter/BaseballWARvContracts/blob/josef-scaffolding/Images%20for%20Google%20Slides%20Scaffolding/4.png)
+The rest of the slides is a scaffolding of the rest of the tableau worksheets displayed on website (each clickable to scroll to). 
+
+### How will Page Interact/Behave? 
+
+1. Adjusted WAR and Salary
+	* Our x-axis represents player salary, our y-axis represents players Adjusted WAR.
+	* Data points in this graph can be clicked and when clicked, will display:
+		* Adjusted WAR 
+		* Player Name
+		* Player Salary 
+		* Year
+	* Filters that can the user can utilize to narrow down displayed datapoint
+		*  A year data check box filter 
+		*  A name search bar
+		*  A slide bar filter to narrow down displayed data points by WAR score. 
+		*  A slide bar filter to narrow down displayed data points by salary. 
+
+2. Salary in Relation to Age * Our x-axis represents player age, our y-axis represents player salary.
+	* Data points in this graph can be clicked and when clicked, will display:
+		* Age
+		* Player Name
+		* Player Salary 
+		* Year
+	*  Filters that can the user can utilize to narrow down displayed datapoint
+		*  Year data check box filter 
+		*  A name search bar
+		*  A slide bar filter to narrow down displayed data points by WAR score. 
+		*  A slide bar filter  to narrow down displayed data points by age. 
+
+3. Team payroll throughout the years  
+    * Our x-axis represents year, our y-axis represents team payroll. 
+	* Data points in this graph can be clicked and when clicked, will display:
+		* Team
+		* Team Payroll
+		* Year
+	*  Filters that can the user can utilize to narrow down displayed datapoint
+		*  A Y ear data check box filter 
+		* A Team ID data check box filter 
+		* A slide bar filter of team payroll 
+4. Percent of Season played in relation to Adj. WAR 
+	* Our x-axis represents Percent of Season Played, our y-axis represents player adjusted WAR. 
+	* Data points in this graph can be clicked and when clicked, will display:
+		* % of Season Played
+		* Adj. WAR 
+		* Player Name
+		* Year
+	*  Filters that can the user can utilize to narrow down displayed datapoint
+		*  A Year data check box filter 
+		* A slide bar filter of Adj. WAR
+		* A slide bar filter of % of season played
+		* A name search bar
+
+### Describe tools used in final dashboard/How page will interact/behave
+
+We are so far using Tableau to create our worksheets that we want to display in a website format through an Index.html file. 
+
+We will either have a single webpage that has our individual worksheets spaced out throughout the length of the webpage, with hyperlinks that auto-scroll you down to that section of the page OR a webpage with hyperlinks that take a user to a sub-page with a specific worksheet. 
+
+### How will users interact with the page?
+
+Users will be able to access the website and it’s data worksheets created in Tableau, and interact with the worksheets by being able to filter specific criteria based on which worksheet they are on. 
+
+### side notes 
+
+Obviously proper descriptions of what each worksheet represents, and how to interact with them should be included in each section. 
+
+Please give some feedback (things that may be missing/need to be included, themes, etc). Ed and I are down to take point for getting this all up and running. 
+
+=======
 ## Dashboard
 - Interactive webpage - using the belly button challenge code as a base
 - correlation matrices - to display data for WAR in relation to % contract remaining
 - Histogram charts
 - parallax html
+
