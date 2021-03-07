@@ -98,6 +98,22 @@ We also only wanted to include a player if they played at least 20% of season to
 ## Machine Learning Model 
 
 * WAR_MLmodel.ipynb
+To upload the dataset into our ML notebook, we connected it to a postgres database and pulled the data from tables made through SQL.
+
+Our target variable is "war_psp" which is the column of the dataset that holds each player's war value per season. 
+ - this is our target value based on our question because we are looking at how the WAR is increasing or decreasing over the time of a player's contract. 
+
+Throughout the Process of designing this model there were early disoveries made with dimesionality reduction. Through encoding, it was evident that the 167 unique values in the team column of the dataset were not significant enough for our analysis. Therefore we were able to drop the team column from our dataframe. We also set the name column as the index in order to keep it from interefearing with our analysis but keeping it in the dataframe for index values.
+
+The league column was also encoded into values 0, 1, 2 to represent the different leagues, the American League and the National League, as well as one trade instances of players who, mid season, were traded to the other league. We uniformed this case a uniform value of "AL/NL" in order to reduce variety in our dataset. 
+
+Using R studio, we ran linear regression analyses on different interactions and combinations of the remaining features. This led us to the ACI copmutation step in which we discovered that the lowest AIC is the total combination model. The total combination model consists of all the remaining features: "age", "year", "league", "player_salary", "percent_season_played", "num_dl_movements", "team_win_percentage", "team_payroll", "percent_contract_complete". 
+
+Our model choice is Linear Regression due to its sucecptibility to overfitting and its dimensionality reduction techinques. The disadvantages that come with this model choice is that we are not 100% certain on the relationships between the variables, so assuming the relationships are linear could lead to arising problems within our model. The assumed independence between variables is a disadvantage as there are variables in our dataset that are based on team values when our index is indidually based. 
+
+The results at which we arrived based on the linear regression are that salary and team payroll have the highest p-values meaning they are the most statistically significant variables within this analysis. Thus they are key elements in our anlaysis on WAR for a player. 
+
+We conducted 
 
 # Week 2 - Scaffolding Phase 
 
