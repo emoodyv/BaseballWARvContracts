@@ -105,7 +105,7 @@ Our target variable is "war_psp" which is the column of the dataset that holds e
 
 Throughout the Process of designing this model there were early disoveries made with dimesionality reduction. Through encoding, it was evident that the 167 unique values in the team column of the dataset were not significant enough for our analysis. Therefore we were able to drop the team column from our dataframe. We also set the name column as the index in order to keep it from interefearing with our analysis but keeping it in the dataframe for index values.
 
-The league column was also encoded into values 0, 1, 2 to represent the different leagues, the American League and the National League, as well as one trade instances of players who, mid season, were traded to the other league. We uniformed this case a uniform value of "AL/NL" in order to reduce variety in our dataset. 
+The league column was also encoded into values 0, 1, 2 to represent the different leagues, the American League and the National League, as well as one trade instances of players who, mid season, were traded to the other league. We uniformed this case a single value of "AL/NL" in order to reduce variety in our dataset. 
 
 Using R studio, we ran linear regression analyses on different interactions and combinations of the remaining features. This led us to the ACI copmutation step in which we discovered that the lowest AIC is the total combination model. The total combination model consists of all the remaining features: "age", "year", "league", "player_salary", "percent_season_played", "num_dl_movements", "team_win_percentage", "team_payroll", "percent_contract_complete". 
 
