@@ -107,7 +107,8 @@ Our target variable is "war_psp" which is the column of the dataset that holds e
 
 Throughout the Process of designing this model there were early disoveries made with dimesionality reduction. Through encoding, it was evident that the 167 unique values in the team column of the dataset were not significant enough for our analysis. Therefore we were able to drop the team column from our dataframe. We also set the name column as the index in order to keep it from interefearing with our analysis but keeping it in the dataframe for index values.
 
-![nameIndexed_MLBdf]('ML_discoveries/nameIndexed_MLBdf.png)
+![nameIndexed_MLBdf!](https://user-images.githubusercontent.com/66536405/110254256-4dd0d480-7f43-11eb-8a5c-0e242fe3f6cc.png)
+
 
 The league column was also encoded into values 0, 1, 2 to represent the different leagues, the American League and the National League, as well as one trade instances of players who, mid season, were traded to the other league. We uniformed this case a single value of "AL/NL" in order to reduce variety in our dataset. 
 
