@@ -98,6 +98,8 @@ We also only wanted to include a player if they played at least 20% of season to
 ## Machine Learning Model 
 
 * WAR_MLmodel.ipynb
+* In the ML_discoveries folder there are screenshots of the findings and changes made while conducting this Machine Learning Model. 
+
 To upload the dataset into our ML notebook, we connected it to a postgres database and pulled the data from tables made through SQL.
 
 Our target variable is "war_psp" which is the column of the dataset that holds each player's war value per season. 
@@ -111,9 +113,9 @@ Using R studio, we ran linear regression analyses on different interactions and 
 
 Our model choice is Linear Regression due to its sucecptibility to overfitting and its dimensionality reduction techinques. The disadvantages that come with this model choice is that we are not 100% certain on the relationships between the variables, so assuming the relationships are linear could lead to arising problems within our model. The assumed independence between variables is a disadvantage as there are variables in our dataset that are based on team values when our index is indidually based. 
 
-The results at which we arrived based on the linear regression are that salary and team payroll have the highest p-values meaning they are the most statistically significant variables within this analysis. Thus they are key elements in our anlaysis on WAR for a player. 
+The results at which we arrived based on the linear regression are that salary and team payroll have the highest p-values meaning they are the least statistically significant variables within this analysis. Thus they are not key elements in our anlaysis on WAR for a player, and can be removed from the dataset. For furthre analysis of this dataset, we are going to clean the current model and continue checking for increased accuracy. 
 
-We conducted 
+
 
 # Week 2 - Scaffolding Phase 
 
