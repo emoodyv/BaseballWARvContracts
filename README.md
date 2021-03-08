@@ -2,6 +2,8 @@
 
 Data Science Final Project on Baseball Player WAR and its relation to their contract
 
+[Google Slide Deck](https://docs.google.com/presentation/d/1DTxp51fS9orpTbkM9tXuJIf6E-jaakWYCBUukM6EiXQ/edit?usp=sharing)
+
 ## Project Overview
 
 There are many different metrics to measure how good or valuable a baseball player is throughout a season. One such metric is Wins Above Replacement or WAR. 
@@ -95,6 +97,8 @@ We also only wanted to include a player if they played at least 20% of season to
 * Team_Payroll.py - Adding a column for adjusted team payroll
 * Team_Wins.py - Adding column for team win percentage
 
+# Week 2 - ML Model and Dashboard Scaffolding
+
 ## Machine Learning Model 
 
 * WAR_MLmodel.ipynb
@@ -109,19 +113,17 @@ Throughout the Process of designing this model there were early disoveries made 
 
 ![nameIndexed_MLBdf!](https://user-images.githubusercontent.com/66536405/110254256-4dd0d480-7f43-11eb-8a5c-0e242fe3f6cc.png)
 
-
 The league column was also encoded into values 0, 1, 2 to represent the different leagues, the American League and the National League, as well as one trade instances of players who, mid season, were traded to the other league. We uniformed this case a single value of "AL/NL" in order to reduce variety in our dataset. 
 
 Using R studio, we ran linear regression analyses on different interactions and combinations of the remaining features. This led us to the ACI copmutation step in which we discovered that the lowest AIC is the total combination model. The total combination model consists of all the remaining features: "age", "year", "league", "player_salary", "percent_season_played", "num_dl_movements", "team_win_percentage", "team_payroll", "percent_contract_complete". 
 
+![Baseball_AIC.PNG](ML_discoveries/Baseball_AIC.PNG)
+
 Our model choice is Linear Regression due to its sucecptibility to overfitting and its dimensionality reduction techinques. The disadvantages that come with this model choice is that we are not 100% certain on the relationships between the variables, so assuming the relationships are linear could lead to arising problems within our model. The assumed independence between variables is a disadvantage as there are variables in our dataset that are based on team values when our index is indidually based. 
 
-The results at which we arrived based on the linear regression are that salary and team payroll have the highest p-values meaning they are the least statistically significant variables within this analysis. Thus they are not key elements in our anlaysis on WAR for a player, and can be removed from the dataset. For furthre analysis of this dataset, we are going to clean the current model and continue checking for increased accuracy. 
+The results at which we arrived based on the linear regression are that league and team payroll have the highest p-values meaning they are the least statistically significant variables within this analysis. Thus they are not key elements in our anlaysis on WAR for a player, and can be removed from the dataset. For further analysis of this dataset, we are going to clean the current model and continue checking for increased accuracy. 
 ![LinearRegResults](https://user-images.githubusercontent.com/66536405/110254302-7a84ec00-7f43-11eb-8939-c80dc22638af.png)
-
-
-
-# Week 2 - Scaffolding Phase 
+## Scaffolding Phase 
 
 ### Google Slides Dashboard layout v.1 
 https://docs.google.com/presentation/d/1sS-l4fdMVWR8aU56O_TnNt9hhm58viymPNDhlr7l34g/edit?usp=sharing
