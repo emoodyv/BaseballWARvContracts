@@ -48,13 +48,30 @@ body, html{
 
 .ptext{
     position: absolute;
-    top: 50%;
     width: 100%;
     text-align: center;
     color:black;
     font-size: 27px;
     letter-spacing: 8px;
     text-transform: uppercase;
+    top: 50%;
+}
+
+.ptext1{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color:black;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    top: 20%;
+}
+.ptext1 .border{
+    background-color: #111;
+    color: white;
+    padding: 10px;
+    line-height: 60px;
 }
 
 .ptext .border{
@@ -68,10 +85,11 @@ body, html{
     background-color: transparent;
 }
 
-#desktop-nav{
+.desktop-nav{
     width: 500px;
     color: white;
-    margin: 0 auto;
+    text-align: center;
+    margin-top: 10px;
 }
 
 #desktop-nav ul{
@@ -79,14 +97,16 @@ body, html{
     color: white;
     display: block;
     margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
 }
 
 #desktop-nav li{
     list-style: none;
     color: white;
+    margin-top: 10px;
+    text-align: center;
 }
-
-#desktop-nav li a{color: #fff, opacity:0.6, font-size: 16px;}
 
 a[id="nav1"]:target ~ #section.section-dark {
     -webkit-transform: translateY(0px);
@@ -106,6 +126,7 @@ a[id="nav4"]:target ~ #section.section-dark {
     transformL translateY(_0px_);
 }
 
+/*Mobile Device Detection*/
 @media(max-width:568px){
     .pimg1, .pimg2, .pimg3{
         background-attachment: scroll;
