@@ -2,6 +2,8 @@
 
 Data Science Final Project on Baseball Player WAR and its relation to their contract
 
+[Google Slide Deck](https://docs.google.com/presentation/d/1DTxp51fS9orpTbkM9tXuJIf6E-jaakWYCBUukM6EiXQ/edit?usp=sharing)
+
 ## Project Overview
 
 There are many different metrics to measure how good or valuable a baseball player is throughout a season. One such metric is Wins Above Replacement or WAR. 
@@ -95,12 +97,129 @@ We also only wanted to include a player if they played at least 20% of season to
 * Team_Payroll.py - Adding a column for adjusted team payroll
 * Team_Wins.py - Adding column for team win percentage
 
+# Week 2 - ML Model and Dashboard Scaffolding
+
 ## Machine Learning Model 
 
 * WAR_MLmodel.ipynb
+* In the ML_discoveries folder there are screenshots of the findings and changes made while conducting this Machine Learning Model. 
 
+To upload the dataset into our ML notebook, we connected it to a postgres database and pulled the data from tables made through SQL.
+
+Our target variable is "war_psp" which is the column of the dataset that holds each player's war value per season. 
+ - this is our target value based on our question because we are looking at how the WAR is increasing or decreasing over the time of a player's contract. 
+
+Throughout the Process of designing this model there were early disoveries made with dimesionality reduction. Through encoding, it was evident that the 167 unique values in the team column of the dataset were not significant enough for our analysis. Therefore we were able to drop the team column from our dataframe. We also set the name column as the index in order to keep it from interefearing with our analysis but keeping it in the dataframe for index values.
+
+![nameIndexed_MLBdf!](https://user-images.githubusercontent.com/66536405/110254256-4dd0d480-7f43-11eb-8a5c-0e242fe3f6cc.png)
+
+The league column was also encoded into values 0, 1, 2 to represent the different leagues, the American League and the National League, as well as one trade instances of players who, mid season, were traded to the other league. We uniformed this case a single value of "AL/NL" in order to reduce variety in our dataset. 
+
+Using R studio, we ran linear regression analyses on different interactions and combinations of the remaining features. This led us to the ACI copmutation step in which we discovered that the lowest AIC is the total combination model. The total combination model consists of all the remaining features: "age", "year", "league", "player_salary", "percent_season_played", "num_dl_movements", "team_win_percentage", "team_payroll", "percent_contract_complete". 
+
+![Baseball_AIC.PNG](ML_discoveries/Baseball_AIC.PNG)
+
+Our model choice is Linear Regression due to its sucecptibility to overfitting and its dimensionality reduction techinques. The disadvantages that come with this model choice is that we are not 100% certain on the relationships between the variables, so assuming the relationships are linear could lead to arising problems within our model. The assumed independence between variables is a disadvantage as there are variables in our dataset that are based on team values when our index is indidually based. 
+
+The results at which we arrived based on the linear regression are that league and team payroll have the highest p-values meaning they are the least statistically significant variables within this analysis. Thus they are not key elements in our anlaysis on WAR for a player, and can be removed from the dataset. For further analysis of this dataset, we are going to clean the current model and continue checking for increased accuracy. 
+![LinearRegResults](https://user-images.githubusercontent.com/66536405/110254302-7a84ec00-7f43-11eb-8939-c80dc22638af.png)
+## Scaffolding Phase 
+
+### Google Slides Dashboard layout v.1 
+https://docs.google.com/presentation/d/1sS-l4fdMVWR8aU56O_TnNt9hhm58viymPNDhlr7l34g/edit?usp=sharing
+
+Attached is the very very VERY rough draft of how the dashboard website could look like. I based this based on Jonathan’s index.html + style.css  files that he shared the other day as well as Ed’s Tableau storyboard. 
+
+Ed says that we can embed specific worksheets into an index.html file, so that they can be showcased separately, so that is the concept behind this rough design. We may decide to showcase the data graphs in a different way. 
+
+I do like the idea of using Tableau’s worksheets because it’s easier than creating code from scratch in an index.html file, and all the interactive features would be included. 
+
+### SLIDE 1 
+![](https://github.com/Shap3shifter/BaseballWARvContracts/blob/josef-scaffolding/Images%20for%20Google%20Slides%20Scaffolding/1.png)
+What people visiting the site would see when first… visiting. I didn’t add any images yet or customize things. Note the clickable links. 
+
+### SLIDE 2
+![](https://github.com/Shap3shifter/BaseballWARvContracts/blob/josef-scaffolding/Images%20for%20Google%20Slides%20Scaffolding/2.png)
+This site is designed so that  when you click on a link, it scrolls down to that section of the website (similar to a restaurant menu on door dash or something) 
+
+### SLIDE 3
+![](https://github.com/Shap3shifter/BaseballWARvContracts/blob/josef-scaffolding/Images%20for%20Google%20Slides%20Scaffolding/3.png)
+This would be the first Tableau Worksheet that would be interactive the same way as if it were in a shared tableau link. 
+
+### SLide 4
+![](https://github.com/Shap3shifter/BaseballWARvContracts/blob/josef-scaffolding/Images%20for%20Google%20Slides%20Scaffolding/4.png)
+The rest of the slides is a scaffolding of the rest of the tableau worksheets displayed on website (each clickable to scroll to). 
+
+### How will Page Interact/Behave? 
+
+1. Adjusted WAR and Salary
+	* Our x-axis represents player salary, our y-axis represents players Adjusted WAR.
+	* Data points in this graph can be clicked and when clicked, will display:
+		* Adjusted WAR 
+		* Player Name
+		* Player Salary 
+		* Year
+	* Filters that can the user can utilize to narrow down displayed datapoint
+		*  A year data check box filter 
+		*  A name search bar
+		*  A slide bar filter to narrow down displayed data points by WAR score. 
+		*  A slide bar filter to narrow down displayed data points by salary. 
+
+2. Salary in Relation to Age * Our x-axis represents player age, our y-axis represents player salary.
+	* Data points in this graph can be clicked and when clicked, will display:
+		* Age
+		* Player Name
+		* Player Salary 
+		* Year
+	*  Filters that can the user can utilize to narrow down displayed datapoint
+		*  Year data check box filter 
+		*  A name search bar
+		*  A slide bar filter to narrow down displayed data points by WAR score. 
+		*  A slide bar filter  to narrow down displayed data points by age. 
+
+3. Team payroll throughout the years  
+    * Our x-axis represents year, our y-axis represents team payroll. 
+	* Data points in this graph can be clicked and when clicked, will display:
+		* Team
+		* Team Payroll
+		* Year
+	*  Filters that can the user can utilize to narrow down displayed datapoint
+		*  A Y ear data check box filter 
+		* A Team ID data check box filter 
+		* A slide bar filter of team payroll 
+4. Percent of Season played in relation to Adj. WAR 
+	* Our x-axis represents Percent of Season Played, our y-axis represents player adjusted WAR. 
+	* Data points in this graph can be clicked and when clicked, will display:
+		* % of Season Played
+		* Adj. WAR 
+		* Player Name
+		* Year
+	*  Filters that can the user can utilize to narrow down displayed datapoint
+		*  A Year data check box filter 
+		* A slide bar filter of Adj. WAR
+		* A slide bar filter of % of season played
+		* A name search bar
+
+### Describe tools used in final dashboard/How page will interact/behave
+
+We are so far using Tableau to create our worksheets that we want to display in a website format through an Index.html file. 
+
+We will either have a single webpage that has our individual worksheets spaced out throughout the length of the webpage, with hyperlinks that auto-scroll you down to that section of the page OR a webpage with hyperlinks that take a user to a sub-page with a specific worksheet. 
+
+### How will users interact with the page?
+
+Users will be able to access the website and it’s data worksheets created in Tableau, and interact with the worksheets by being able to filter specific criteria based on which worksheet they are on. 
+
+### side notes 
+
+Obviously proper descriptions of what each worksheet represents, and how to interact with them should be included in each section. 
+
+Please give some feedback (things that may be missing/need to be included, themes, etc). Ed and I are down to take point for getting this all up and running. 
+
+=======
 ## Dashboard
 - Interactive webpage - using the belly button challenge code as a base
 - correlation matrices - to display data for WAR in relation to % contract remaining
 - Histogram charts
 - parallax html
+
