@@ -2,6 +2,8 @@
 
 Data Science Final Project on Baseball Player WAR and its relation to their contract
 
+[Google Slide Deck](https://docs.google.com/presentation/d/1DTxp51fS9orpTbkM9tXuJIf6E-jaakWYCBUukM6EiXQ/edit?usp=sharing)
+
 ## Project Overview
 
 There are many different metrics to measure how good or valuable a baseball player is throughout a season. One such metric is Wins Above Replacement or WAR. 
