@@ -113,10 +113,11 @@ Throughout the Process of designing this model there were early disoveries made 
 
 ![nameIndexed_MLBdf!](https://user-images.githubusercontent.com/66536405/110254256-4dd0d480-7f43-11eb-8a5c-0e242fe3f6cc.png)
 
-
 The league column was also encoded into values 0, 1, 2 to represent the different leagues, the American League and the National League, as well as one trade instances of players who, mid season, were traded to the other league. We uniformed this case a single value of "AL/NL" in order to reduce variety in our dataset. 
 
 Using R studio, we ran linear regression analyses on different interactions and combinations of the remaining features. This led us to the ACI copmutation step in which we discovered that the lowest AIC is the total combination model. The total combination model consists of all the remaining features: "age", "year", "league", "player_salary", "percent_season_played", "num_dl_movements", "team_win_percentage", "team_payroll", "percent_contract_complete". 
+
+![Baseball_AIC.PNG](ML_discoveries/Baseball_AIC.PNG)
 
 Our model choice is Linear Regression due to its sucecptibility to overfitting and its dimensionality reduction techinques. The disadvantages that come with this model choice is that we are not 100% certain on the relationships between the variables, so assuming the relationships are linear could lead to arising problems within our model. The assumed independence between variables is a disadvantage as there are variables in our dataset that are based on team values when our index is indidually based. 
 
