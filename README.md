@@ -123,6 +123,46 @@ Our model choice is Linear Regression due to its sucecptibility to overfitting a
 
 The results at which we arrived based on the linear regression are that league and team payroll have the highest p-values meaning they are the least statistically significant variables within this analysis. Thus they are not key elements in our anlaysis on WAR for a player, and can be removed from the dataset. For further analysis of this dataset, we are going to clean the current model and continue checking for increased accuracy. 
 ![LinearRegResults](https://user-images.githubusercontent.com/66536405/110254302-7a84ec00-7f43-11eb-8939-c80dc22638af.png)
+
+## Week 3 - ML Model
+During our week two model we saw there were the issues of multicollinearity as well as standardization throughout columns that needed to be addressed. 
+
+In doing so, to create a linear regression model with standardized data, we took the columns with large values: “player_salary” and “team_payroll” and replaced the values with the log of the values. We also changed the “percent_contract_complete” to being the decimal form instead of percent form in order to bring it to scale. 
+
+From here we created our X and y tables. y consists of out “war_psp” target column , and X consists of “age”, “year”, “player_salary”, “num_dl_movements”, “team_win_percentage”, “team_payroll”, “percent_contract_complete”.
+
+We ran this regression and had a much better table of values in our OLS Regression Results output, however there was still multicollinearity present because of team_payroll, which was still present even with the transformation. This lead to our decision to remove the column due to the high p-value, meaning its lack of effect on the regression. 
+
+We then ran the regression again, and our multicollinearity problems were removed with the removal of “team_payroll”, and all of our p-values were sufficient. However, our R^2 value was extremely low. 
+
+We tried variations of linear regression models, including Ridge and Lasso techniques. These also resulted in unfortunately low accuracy scores, leading us to throwing out these models. The output of these tests can be visualized below:
+![RidgeLasso.png](https://user-images.githubusercontent.com/66536405/111055093-41f37f80-8427-11eb-9f46-0accbac616a3.png)
+
+
+With this new information, we decided that trying a new approach to our dataset with a random forest estimation seemed more appropriate. 
+
+Using the RandomForesRegressor from scikitlearn, we used the same reduced dimensions MLB_df and arrived at the R^2 value of our Random Forest model which is  about 86%., as well as the accuracy score which is about 96%.
+This is immensely higher than our results for linear regression techniques we implemented previously.
+
+Our chosen method to split the data is making 80% of the data as training and 20% of the data as testing with random state = 42. 
+
+When running the RandomForestRegressor model on the training set we get an R^2 value of about 86% and an accuracy score of about 99%. For the testing data we get an  R^2 value of about 86% and an accuracy score of about 92%. This confirms our decision to use this model for our analysis, as well as the fact that when comparing the actual values and predicted values there is a very strong linear relationship displayed. 
+
+	R^2 values and accuracy scores :
+![AccR2.png](https://user-images.githubusercontent.com/66536405/111055054-f214b880-8426-11eb-96c0-6f9bccc84e28.png)
+![trainAccR2.png](https://user-images.githubusercontent.com/66536405/111055075-20929380-8427-11eb-8cea-d341de6c208b.png)
+![testAccR2.png](https://user-images.githubusercontent.com/66536405/111055067-0a84d300-8427-11eb-961f-ecae340284f5.png)
+
+	Linear relationship between predicted and true:
+![predVSsactual.png](https://user-images.githubusercontent.com/66536405/111055316-9566cd00-8429-11eb-8eeb-8209426b3951.png)
+
+Finding the important features, also let us know we were choosing the right model because none of the importance levels were extremely low.
+![importantFeat.png](https://user-images.githubusercontent.com/66536405/111055081-2a1bfb80-8427-11eb-820e-581c0931c301.png)
+![importantTrainFeat.png](https://user-images.githubusercontent.com/66536405/111055083-32743680-8427-11eb-9ac1-3879c496ee6a.png)
+![importantTestFeat.png](https://user-images.githubusercontent.com/66536405/111055087-386a1780-8427-11eb-87ae-b2bdabfda985.png)
+
+The accuracy score of our data means that it will predict the WAR score accurately for the X data set 95% of the time, the training set 99% of the time, and the testing set 92% of the time. These models are proven to be extremely accurate in prediction based on their high accuracy scores.
+
 ## Scaffolding Phase 
 
 ### Google Slides Dashboard layout v.1 
