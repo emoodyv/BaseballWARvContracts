@@ -5,11 +5,13 @@ import numpy as np
 
 all_df = pd.read_csv('all_players.csv')
 
+percent_noise = 1
+
 for i in range(0, len(all_df['Percent_Contract_Complete'])):
     if all_df['Percent_Contract_Complete'][i] != 100:
-        all_df['Percent_Contract_Complete'][i] += np.random.randint(-500000, 500000)/100000
+        all_df['Percent_Contract_Complete'][i] += np.random.randint(-percent_noise * 100000, percent_noise * 100000) / 100000
     else:
-        all_df['Percent_Contract_Complete'][i] -= np.abs(np.random.randint(-500000, 500000) / 100000)
+        all_df['Percent_Contract_Complete'][i] -= np.abs(np.random.randint(-percent_noise * 100000, percent_noise * 100000) / 100000)
 
 all_df.Percent_Season_Played = all_df.Percent_Season_Played.round(6)
 all_df.WAR_PSP = all_df.WAR_PSP.round(6)
