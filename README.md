@@ -152,7 +152,8 @@ When running the RandomForestRegressor model on the training set we get an R^2 v
 ![trainAccR2.png](https://user-images.githubusercontent.com/66536405/111055075-20929380-8427-11eb-8cea-d341de6c208b.png)
 ![testAccR2.png](https://user-images.githubusercontent.com/66536405/111055067-0a84d300-8427-11eb-961f-ecae340284f5.png)
 
-
+	Linear relationship between predicted and true:
+![predVSsactual.png](https://user-images.githubusercontent.com/66536405/111055316-9566cd00-8429-11eb-8eeb-8209426b3951.png)
 
 Finding the important features, also let us know we were choosing the right model because none of the importance levels were extremely low.
 ![importantFeat.png](https://user-images.githubusercontent.com/66536405/111055081-2a1bfb80-8427-11eb-820e-581c0931c301.png)
