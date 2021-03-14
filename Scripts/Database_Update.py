@@ -22,6 +22,9 @@ all_df.Percent_Contract_Complete = all_df.Percent_Contract_Complete.round(6)
 con = psycopg2.connect(database=database, user=user, password=password, host=host, port=port)
 
 cur = con.cursor()
+
+cur.execute('DROP TABLE Players;')
+
 cur.execute('''CREATE TABLE Players
       (Name VARCHAR NOT NULL,
       Age SMALLINT NOT NULL,
