@@ -147,6 +147,7 @@ This is immensely higher than our results for linear regression techniques we im
 Our chosen method to split the data is making 80% of the data as training and 20% of the data as testing with random state = 42. 
 
 When running the RandomForestRegressor model on the training set we get an R^2 value of about 86% and an accuracy score of about 99%. For the testing data we get an  R^2 value of about 86% and an accuracy score of about 92%. This confirms our decision to use this model for our analysis, as well as the fact that when comparing the actual values and predicted values there is a very strong linear relationship displayed. 
+
 	R^2 values and accuracy scores :
 ![AccR2.png](https://user-images.githubusercontent.com/66536405/111055054-f214b880-8426-11eb-96c0-6f9bccc84e28.png)
 ![trainAccR2.png](https://user-images.githubusercontent.com/66536405/111055075-20929380-8427-11eb-8cea-d341de6c208b.png)
