@@ -76,7 +76,16 @@
         After running the model we found that league and team payroll have the highest p-values meaning they are the least statistically significant variables. Therefore we dropped those columns in the dataset.
         Reflecting on our dataset and wondering why the accuracy scores were so low we discovered that there some variables that were collinear even though the model was saying that there were no issues.
         The "Percent_Season_Played" variable is actually already included in the "WAR_PSP" calculation making it a redundant variable.
-        
+        We then realized that our hypothesis was that a player's WAR would increase as they neared the end of their contract meaning that their WAR tracked over the length of their contract wouldn't be linear so using the OLS model wouldn't fit.
+
+    </p>
+    <p>
+        We then switched from OLS to trying out Ridge and Lasso techniques. These also resulted in a low accuracy score. 
+    </p>
+    <img src="img/charts/Ridge lasso.png" alt="OLS Results" class="charts">
+    <p>
+        Since our hypothesis was that a player's WAR wouldn't follow a linear pattern we had to try a different approach using the random RandomForestRegressor.
+        Just by tweaking the type of model we were using we were able to achieve an accuracy of 98.3% with an R^2
     </p>
 </section>
 
@@ -90,7 +99,6 @@
 
 <!-- Section Three -->
 <section class="section section-dark" id="nav3">
-    <h2>Section 3</h2>
     <p>
     Our chosen method to split the data was to make 80% of the data as training and 20% of the data as testing with a random state = 42.
     </p>
@@ -100,18 +108,15 @@
     strong linear relationship diesplayed.
     </p>
         <h3>R^2 Values and Accuracy Scores</h3>
-        <img src=path for mod RFRegressor R^2 result alt=title>
-        <img src=path for train_mod RFRegressor R^2 result alt=title>
-        <img src=path for test_mod RFRegressor R^2 result alt=title>
+        <img src="img/Charts/R score all data.png" alt="R^2 all data" class="charts">
     <h3>Linear Relationship Between Predicted and True</h3>
-        <img src=path for predicted and true plots alt=title>
+        <img src="/img/Charts/PredvAccPlot.png" alt="Predict Plot" class="charts">
     <h3>Visualizing Important Features</h3>
       <p>
       Finding the important features also helped to verify that we chose the correct model, as none of the importance levels of our data columns were extremely low.
       </p>
-        <img src=path for mod important features alt=title>
-        <img src=path for training important features alt=title>
-        <img src=path for testing important features alt=title>
+        <img src="img/charts/FeatImpScores.png" alt="important scores" class="charts">
+
       <p>
       The accuracy score of our data means that it will predict the WAR score accurately for the X data set 95% of the time, the training set 99% of the time,
       and the testing set 92% of the time. These models are proven to be extremely accurate in prediction based on their high accuracy scores.
