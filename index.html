@@ -5,6 +5,12 @@
  <title>Baseball's WAR values in Relation to Player Performance</title>
  <link rel="stylesheet" href="css/style.css"/>
  <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<style>
+    img{
+        width: 100%;
+        height: auto;
+    }
+</style>
 </head>
 
 <body>
@@ -67,15 +73,17 @@
     </p>
         <img src="img/charts/Linear regression p values.png" alt="OLS Results" class="charts">
     <p>
-        After running the model we found that league and team payroll had the highest p-values meaning they are the least statistically significant variables. 
-        To deal with the colinearity issues we had to standardize all the data columns because some variables such as player salary had enormous ranges whereas WAR_PSP has very small numerical ranges.
+        After running the model we found that league and team payroll have the highest p-values meaning they are the least statistically significant variables. Therefore we dropped those columns in the dataset.
+        Reflecting on our dataset and wondering why the accuracy scores were so low we discovered that there some variables that were collinear even though the model was saying that there were no issues.
+        The "Percent_Season_Played" variable is actually already included in the "WAR_PSP" calculation making it a redundant variable.
+        
     </p>
 </section>
 
 <div class="pimg3">
     <div class="ptext">
         <span class="border trans">
-            RESULTS
+            <h2>RESULTS</h2>
         </span>
     </div>
 </div>
@@ -84,7 +92,30 @@
 <section class="section section-dark" id="nav3">
     <h2>Section 3</h2>
     <p>
+    Our chosen method to split the data was to make 80% of the data as training and 20% of the data as testing with a random state = 42.
     </p>
+    <p>
+    Running the RandomForestRegressor model on the training set we get an R^2 value of about 86% and an accuracy score of about 99%,
+    confirming our decision to use this model in our analysis. When comparing the actual values and predicted values there is a very
+    strong linear relationship diesplayed.
+    </p>
+        <h3>R^2 Values and Accuracy Scores</h3>
+        <img src=path for mod RFRegressor R^2 result alt=title>
+        <img src=path for train_mod RFRegressor R^2 result alt=title>
+        <img src=path for test_mod RFRegressor R^2 result alt=title>
+    <h3>Linear Relationship Between Predicted and True</h3>
+        <img src=path for predicted and true plots alt=title>
+    <h3>Visualizing Important Features</h3>
+      <p>
+      Finding the important features also helped to verify that we chose the correct model, as none of the importance levels of our data columns were extremely low.
+      </p>
+        <img src=path for mod important features alt=title>
+        <img src=path for training important features alt=title>
+        <img src=path for testing important features alt=title>
+      <p>
+      The accuracy score of our data means that it will predict the WAR score accurately for the X data set 95% of the time, the training set 99% of the time,
+      and the testing set 92% of the time. These models are proven to be extremely accurate in prediction based on their high accuracy scores.
+      </p>
 </section>
 
 <div class="pimg1">
