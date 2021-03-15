@@ -53,12 +53,8 @@ Our group has agreed upon to meet during class times and at least one weekend da
 
 * PyCharm (Python 3.8.5)
 * Jupyter Notebook 
-
-
-## Final Data Files 
-
-* Current dataset for our analysis: all_players.csv 
-* Factoring for inflation by year: Inflation_Constants.csv
+* Tableau
+* PostgreSQL
 
 
 ## Creating our Dataset
@@ -74,15 +70,15 @@ We also only wanted to include a player if they played at least 20% of season to
 #### Columns List 
 
 * Age
-* Year
-* Team
-* League (American League or National League) 
+* --Year--
+* --Team--
+* --League (American League or National League)--
 * Player_Salary
-* Percent_Season_Played
+* --Percent_Season_Played--
 * WAR_PSP (Wins Above Replacement adjusted for Percentage of Season Played)
 * Num_DL_Movements (Number of times in a season player moved to Disabled List) 
 * Team_Win_Percentage
-* Team_Payroll
+* --Team_Payroll--
 * Percent_Contract_Complete
 
 #### Python scripts used for cleaning of data with descriptions, alphabatized 
