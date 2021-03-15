@@ -137,12 +137,12 @@ We tried variations of linear regression models, including Ridge and Lasso techn
 
 With this new information, we decided that trying a new approach to our dataset with a random forest estimation seemed more appropriate. 
 
-Using the RandomForesRegressor from scikitlearn, we used the same reduced dimensions MLB_df and arrived at the R^2 value of our Random Forest model which is  about 86%., as well as the accuracy score which is about 96%.
+Using the RandomForesRegressor from scikitlearn, we used the same reduced dimensions MLB_df and arrived at the R^2 value of our Random Forest model which is about 86.3%, as well as the accuracy score which is about 98.3%.
 This is immensely higher than our results for linear regression techniques we implemented previously.
 
 Our chosen method to split the data is making 80% of the data as training and 20% of the data as testing with random state = 42. 
 
-When running the RandomForestRegressor model on the training set we get an R^2 value of about 86% and an accuracy score of about 99%. For the testing data we get an  R^2 value of about 86% and an accuracy score of about 92%. This confirms our decision to use this model for our analysis, as well as the fact that when comparing the actual values and predicted values there is a very strong linear relationship displayed. 
+When running the RandomForestRegressor model on the training set we get an R^2 value of about 86.7% and an accuracy score of about 98.3%. For the testing data we get an  R^2 value of about 85.5% and an accuracy score of about 93.7%. This confirms our decision to use this model for our analysis, as well as the fact that when comparing the actual values and predicted values there is a very strong linear relationship displayed. 
 
 	R^2 values and accuracy scores :
 ![Rsq_Acc_Results.PNG](ML_discoveries/Rsq_Acc_Results.PNG)
@@ -151,9 +151,10 @@ When running the RandomForestRegressor model on the training set we get an R^2 v
 ![PredvAccPlot.PNG](ML_discoveries/PredvAccPlot.PNG)
 
 Finding the important features, also let us know we were choosing the right model because none of the importance levels were extremely low.
+
 ![FeatImpScores.PNG](ML_discoveries/FeatImpScores.PNG)
 
-The accuracy score of our data means that it will predict the WAR score accurately for the X data set 95% of the time, the training set 99% of the time, and the testing set 92% of the time. These models are proven to be extremely accurate in prediction based on their high accuracy scores.
+The accuracy score of our data means that it will predict the WAR score accurately for the X data set 98.3% of the time, the training set 98.3% of the time, and the testing set 93.7% of the time. These models are proven to be extremely accurate in prediction based on their high accuracy scores.
 
 ## Scaffolding Phase 
 
