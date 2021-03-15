@@ -53,12 +53,8 @@ Our group has agreed upon to meet during class times and at least one weekend da
 
 * PyCharm (Python 3.8.5)
 * Jupyter Notebook 
-
-
-## Final Data Files 
-
-* Current dataset for our analysis: all_players.csv 
-* Factoring for inflation by year: Inflation_Constants.csv
+* Tableau
+* PostgreSQL
 
 
 ## Creating our Dataset
@@ -74,15 +70,15 @@ We also only wanted to include a player if they played at least 20% of season to
 #### Columns List 
 
 * Age
-* Year
-* Team
-* League (American League or National League) 
+* ~~Year~~
+* ~~Team~~
+* ~~League (American League or National League)~~
 * Player_Salary
-* Percent_Season_Played
+* ~~Percent_Season_Played~~
 * WAR_PSP (Wins Above Replacement adjusted for Percentage of Season Played)
 * Num_DL_Movements (Number of times in a season player moved to Disabled List) 
 * Team_Win_Percentage
-* Team_Payroll
+* ~~Team_Payroll~~
 * Percent_Contract_Complete
 
 #### Python scripts used for cleaning of data with descriptions, alphabatized 
@@ -141,27 +137,24 @@ We tried variations of linear regression models, including Ridge and Lasso techn
 
 With this new information, we decided that trying a new approach to our dataset with a random forest estimation seemed more appropriate. 
 
-Using the RandomForesRegressor from scikitlearn, we used the same reduced dimensions MLB_df and arrived at the R^2 value of our Random Forest model which is  about 86%., as well as the accuracy score which is about 96%.
+Using the RandomForesRegressor from scikitlearn, we used the same reduced dimensions MLB_df and arrived at the R^2 value of our Random Forest model which is about 86.3%, as well as the accuracy score which is about 98.3%.
 This is immensely higher than our results for linear regression techniques we implemented previously.
 
 Our chosen method to split the data is making 80% of the data as training and 20% of the data as testing with random state = 42. 
 
-When running the RandomForestRegressor model on the training set we get an R^2 value of about 86% and an accuracy score of about 99%. For the testing data we get an  R^2 value of about 86% and an accuracy score of about 92%. This confirms our decision to use this model for our analysis, as well as the fact that when comparing the actual values and predicted values there is a very strong linear relationship displayed. 
+When running the RandomForestRegressor model on the training set we get an R^2 value of about 86.7% and an accuracy score of about 98.3%. For the testing data we get an  R^2 value of about 85.5% and an accuracy score of about 93.7%. This confirms our decision to use this model for our analysis, as well as the fact that when comparing the actual values and predicted values there is a very strong linear relationship displayed. 
 
 	R^2 values and accuracy scores :
-![AccR2.png](https://user-images.githubusercontent.com/66536405/111055054-f214b880-8426-11eb-96c0-6f9bccc84e28.png)
-![trainAccR2.png](https://user-images.githubusercontent.com/66536405/111055075-20929380-8427-11eb-8cea-d341de6c208b.png)
-![testAccR2.png](https://user-images.githubusercontent.com/66536405/111055067-0a84d300-8427-11eb-961f-ecae340284f5.png)
+![Rsq_Acc_Results.PNG](ML_discoveries/Rsq_Acc_Results.PNG)
 
 	Linear relationship between predicted and true:
-![predVSsactual.png](https://user-images.githubusercontent.com/66536405/111055316-9566cd00-8429-11eb-8eeb-8209426b3951.png)
+![PredvAccPlot.PNG](ML_discoveries/PredvAccPlot.PNG)
 
 Finding the important features, also let us know we were choosing the right model because none of the importance levels were extremely low.
-![importantFeat.png](https://user-images.githubusercontent.com/66536405/111055081-2a1bfb80-8427-11eb-820e-581c0931c301.png)
-![importantTrainFeat.png](https://user-images.githubusercontent.com/66536405/111055083-32743680-8427-11eb-9ac1-3879c496ee6a.png)
-![importantTestFeat.png](https://user-images.githubusercontent.com/66536405/111055087-386a1780-8427-11eb-87ae-b2bdabfda985.png)
 
-The accuracy score of our data means that it will predict the WAR score accurately for the X data set 95% of the time, the training set 99% of the time, and the testing set 92% of the time. These models are proven to be extremely accurate in prediction based on their high accuracy scores.
+![FeatImpScores.PNG](ML_discoveries/FeatImpScores.PNG)
+
+The accuracy score of our data means that it will predict the WAR score accurately for the X data set 98.3% of the time, the training set 98.3% of the time, and the testing set 93.7% of the time. These models are proven to be extremely accurate in prediction based on their high accuracy scores.
 
 ## Scaffolding Phase 
 
