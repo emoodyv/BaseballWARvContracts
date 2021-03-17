@@ -58,6 +58,11 @@ Our group has agreed upon to meet during class times and at least one weekend da
 * Tableau
 * PostgreSQL
 
+### Packages from Python used
+* Numpy
+* Pandas
+* scikitlearn
+
 
 ## Creating our Dataset
 
