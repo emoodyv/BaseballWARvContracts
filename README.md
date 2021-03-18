@@ -6,6 +6,8 @@ Data Science Final Project on Baseball Player WAR and its relation to their cont
 
 [Dashboard](https://wardash.herokuapp.com/)
 
+[Deployed WAR Predictor] (https://war-predict.herokuapp.com/)
+
 ## Project Overview
 
 There are many different metrics to measure how good or valuable a baseball player is throughout a season. One such metric is Wins Above Replacement or WAR. 
