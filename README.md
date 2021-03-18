@@ -6,7 +6,7 @@ Data Science Final Project on Baseball Player WAR and its relation to their cont
 
 [Dashboard](https://wardash.herokuapp.com/)
 
-[Deployed WAR Predictor] (https://war-predict.herokuapp.com/)
+[Deployed WAR Predictor](https://war-predict.herokuapp.com/)
 
 ## Project Overview
 
