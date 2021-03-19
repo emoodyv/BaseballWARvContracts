@@ -111,12 +111,12 @@ We also only wanted to include a player if they played at least 20% of season to
 
 To upload the dataset into our ML notebook, we connected it to a postgres database and pulled the data from tables made through SQL.
 
-Our target variable is "war_psp" which is the column of the dataset that holds each player's war value per season. 
- - this is our target value based on our question because we are looking at how the WAR is increasing or decreasing over the time of a player's contract. 
+Our target variable for our model is the "war_psp" column of our dataset corresponding to the player’s Wins Above Ratio value. 
+ - this is our target value based on our question because we are looking at predicting a value for WAR based on given features.
 
-Throughout the Process of designing this model there were early disoveries made with dimesionality reduction. Through encoding, it was evident that the 167 unique values in the team column of the dataset were not significant enough for our analysis. Therefore we were able to drop the team column from our dataframe. We also are dropping the name column due to a lack of significance.
+Throughout the Process of designing this model there were early disoveries made with dimesionality reduction. Through encoding, it was evident that the 167 unique values in the team column of the dataset were not significant enough for our analysis, due to the massive dimensionality. Therefore we were able to drop the team column from our dataframe. We also are dropping the name column due to a lack of significance.
 
-The league column was also encoded into values 0, 1, 2 to represent the different leagues, the American League and the National League, as well as one trade instances of players who, mid season, were traded to the other league. We uniformed this case a single value of "AL/NL" in order to reduce variety in our dataset. 
+The league column was also encoded into values 0, 1, 2 to represent the different leagues, the American League and the National League, as well as one trade instances players were traded mid season to a team of a different league. We uniformed this case a single value of "AL/NL" in order to reduce variety in our dataset. 
 
 Using R studio, we ran linear regression analyses on different interactions and combinations of the remaining features. This led us to the ACI copmutation step in which we discovered that the lowest AIC is the total combination model. The total combination model consists of all the remaining features: "age", "year", "league", "player_salary", "percent_season_played", "num_dl_movements", "team_win_percentage", "team_payroll", "percent_contract_complete". 
 
