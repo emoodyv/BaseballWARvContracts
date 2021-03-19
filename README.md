@@ -4,6 +4,10 @@ Data Science Final Project on Baseball Player WAR and its relation to their cont
 
 [Google Slide Deck](https://docs.google.com/presentation/d/1DTxp51fS9orpTbkM9tXuJIf6E-jaakWYCBUukM6EiXQ/edit?usp=sharing)
 
+[Dashboard](https://wardash.herokuapp.com/)
+
+[Deployed WAR Predictor](https://war-predict.herokuapp.com/)
+
 ## Project Overview
 
 There are many different metrics to measure how good or valuable a baseball player is throughout a season. One such metric is Wins Above Replacement or WAR. 
@@ -56,6 +60,11 @@ Our group has agreed upon to meet during class times and at least one weekend da
 * Tableau
 * PostgreSQL
 
+### Packages from Python used
+* Numpy
+* Pandas
+* scikitlearn
+
 
 ## Creating our Dataset
 
@@ -102,20 +111,18 @@ We also only wanted to include a player if they played at least 20% of season to
 
 To upload the dataset into our ML notebook, we connected it to a postgres database and pulled the data from tables made through SQL.
 
-Our target variable is "war_psp" which is the column of the dataset that holds each player's war value per season. 
- - this is our target value based on our question because we are looking at how the WAR is increasing or decreasing over the time of a player's contract. 
+Our target variable for our model is the "war_psp" column of our dataset corresponding to the player’s Wins Above Ratio value. 
+ - this is our target value based on our question because we are looking at predicting a value for WAR based on given features.
 
-Throughout the Process of designing this model there were early disoveries made with dimesionality reduction. Through encoding, it was evident that the 167 unique values in the team column of the dataset were not significant enough for our analysis. Therefore we were able to drop the team column from our dataframe. We also set the name column as the index in order to keep it from interefearing with our analysis but keeping it in the dataframe for index values.
+Throughout the Process of designing this model there were early disoveries made with dimesionality reduction. Through encoding, it was evident that the 167 unique values in the team column of the dataset were not significant enough for our analysis, due to the massive dimensionality. Therefore we were able to drop the team column from our dataframe. We also are dropping the name column due to a lack of significance.
 
-![nameIndexed_MLBdf!](https://user-images.githubusercontent.com/66536405/110254256-4dd0d480-7f43-11eb-8a5c-0e242fe3f6cc.png)
-
-The league column was also encoded into values 0, 1, 2 to represent the different leagues, the American League and the National League, as well as one trade instances of players who, mid season, were traded to the other league. We uniformed this case a single value of "AL/NL" in order to reduce variety in our dataset. 
+The league column was also encoded into values 0, 1, 2 to represent the different leagues, the American League and the National League, as well as one trade instances players were traded mid season to a team of a different league. We uniformed this case a single value of "AL/NL" in order to reduce variety in our dataset. 
 
 Using R studio, we ran linear regression analyses on different interactions and combinations of the remaining features. This led us to the ACI copmutation step in which we discovered that the lowest AIC is the total combination model. The total combination model consists of all the remaining features: "age", "year", "league", "player_salary", "percent_season_played", "num_dl_movements", "team_win_percentage", "team_payroll", "percent_contract_complete". 
 
 ![Baseball_AIC.PNG](ML_discoveries/Baseball_AIC.PNG)
 
-Our model choice is Linear Regression due to its sucecptibility to overfitting and its dimensionality reduction techinques. The disadvantages that come with this model choice is that we are not 100% certain on the relationships between the variables, so assuming the relationships are linear could lead to arising problems within our model. The assumed independence between variables is a disadvantage as there are variables in our dataset that are based on team values when our index is indidually based. 
+Our choice in using a Linear Regression model was due to its sucecptibility to overfitting and its dimensionality reduction techinques. The disadvantages that came with this model choice is that we were not 100% certain on the relationships between the variables, so assuming the relationships are linear could lead to arising problems within our model. The assumed independence between variables is a disadvantage as there are variables in our dataset that are based on team values when our index is indidually based. 
 
 The results at which we arrived based on the linear regression are that league and team payroll have the highest p-values meaning they are the least statistically significant variables within this analysis. Thus they are not key elements in our anlaysis on WAR for a player, and can be removed from the dataset. For further analysis of this dataset, we are going to clean the current model and continue checking for increased accuracy. 
 ![LinearRegResults](https://user-images.githubusercontent.com/66536405/110254302-7a84ec00-7f43-11eb-8939-c80dc22638af.png)
@@ -135,7 +142,7 @@ We tried variations of linear regression models, including Ridge and Lasso techn
 ![RidgeLasso.png](https://user-images.githubusercontent.com/66536405/111055093-41f37f80-8427-11eb-9f46-0accbac616a3.png)
 
 
-With this new information, we decided that trying a new approach to our dataset with a random forest estimation seemed more appropriate. 
+With this new information, we decided that trying a new approach to our dataset with a random forest estimation seemed more appropriate. The reasoning for our model change up was due to the fact that a random forest is known for promoting the performance of the model. The qualities of a random forest showing the important features in a model, as well as being fast and robust. Thus it seemed like a good solution for our need of improved accuracy.
 
 Using the RandomForesRegressor from scikitlearn, we used the same reduced dimensions MLB_df and arrived at the R^2 value of our Random Forest model which is about 86.3%, as well as the accuracy score which is about 98.3%.
 This is immensely higher than our results for linear regression techniques we implemented previously.
@@ -155,6 +162,10 @@ Finding the important features, also let us know we were choosing the right mode
 ![FeatImpScores.PNG](ML_discoveries/FeatImpScores.PNG)
 
 The accuracy score of our data means that it will predict the WAR score accurately for the X data set 98.3% of the time, the training set 98.3% of the time, and the testing set 93.7% of the time. These models are proven to be extremely accurate in prediction based on their high accuracy scores.
+
+With this model, we have provided an accurate method of preficting a player's WAR using input values: “age”, “year”, “player_salary”, “num_dl_movements”, “team_win_percentage”, “team_payroll”, “percent_contract_complete”. Our hypthoesis asks whethere the WAR and percent contract complete move concurrently, however, our model does not truly answer that question. Although, we can view the correlation between the variables which is shown below, and that the prediction error is small, we cannot see an evident relationship with our model that asnwers our hypothesis. 
+![warVspred.png](https://user-images.githubusercontent.com/66536405/111568295-b6972880-875d-11eb-9c28-cd2624a8dce3.png)
+
 
 ## Scaffolding Phase 
 
